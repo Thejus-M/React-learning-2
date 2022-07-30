@@ -8,7 +8,7 @@ function App() {
     <>
       <Navbar title="Textiles"/><br />
       <div className="container" >
-        <TextForm area="Comment"/>
+        <TextForm area="Enter Your text"/>
       </div>
     </>
   );
