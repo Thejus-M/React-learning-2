@@ -1,24 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
 
+let name = "js"
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          This is the 2 lesson in  playlist
-        </a>
-      </header>
+    <>
+    <nav>
+      <li>Home</li>
+      <li>About</li>
+      <li>Contact</li>
+    </nav>
+    <div className="blank">
+      This is a div <br />
+      This is a {name} variable
     </div>
+    </>
   );
 }
 
