@@ -39,10 +39,6 @@ export default function About(props) {
         backgroundColor: 'rgb(3, 75, 75)'
 
     })
-    let lightStyle = {
-        color: 'Black',
-        backgroundColor: 'White'
-    }
     return (
         <div className="container"
             style={darkOuterStyle}>
