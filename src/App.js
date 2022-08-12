@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import About from "./components/About";
+// import About from "./components/About";
 import Alert from "./components/Alert";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
@@ -11,26 +11,26 @@ function App() {
 	const [alert, setAlert] = useState(null);
 
 	// * functions
-  const showAlert = (message, type)=>{
-    setAlert({
-      msg:message,
-      type: type
-    })
-    setTimeout(() => {
-      setAlert(null);
-    },1000)
-  }
+	const showAlert = (message, type) => {
+		setAlert({
+			msg: message,
+			type: type,
+		});
+		setTimeout(() => {
+			setAlert(null);
+		}, 1000);
+	};
 	const toggleMode = () => {
 		if (mode === "dark") {
 			setMode("light");
 			document.body.style.backgroundColor = "white";
 			document.body.style.color = "black";
-      showAlert("Light mode is enabled !!","success");
+			showAlert("Light mode is enabled !!", "success");
 		} else {
 			setMode("dark");
 			document.body.style.backgroundColor = "rgb(0, 17, 17)";
 			document.body.style.color = "rgb(99, 99, 100)";
-      showAlert("Dark mode is enabled !!","success");
+			showAlert("Dark mode is enabled !!", "success");
 		}
 	};
 	return (
@@ -41,7 +41,6 @@ function App() {
 			<div className="container">
 				<TextForm showAlert={showAlert} area="Enter Your text" mode={mode} />
 			</div>
-			<About aboutUs="About Us" />
 		</>
 	);
 }
