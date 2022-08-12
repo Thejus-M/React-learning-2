@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./App.css";
-// import About from "./components/About";
+import About from "./components/About";
 import Alert from "./components/Alert";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
+
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 function App() {
 	// * variables
@@ -35,12 +37,26 @@ function App() {
 	};
 	return (
 		<>
-			<Navbar title="Textiles" mode={mode} toggleMode={toggleMode} />
-			<br />
-			<Alert alert={alert} />
-			<div className="container">
-				<TextForm showAlert={showAlert} area="Enter Your text" mode={mode} />
-			</div>
+			<BrowserRouter>
+				<Navbar title="Textiles" mode={mode} toggleMode={toggleMode} />
+				<br />
+				<Alert alert={alert} />
+				<div className="container">
+					<Routes>
+						<Route
+							exact path="/"
+							element={
+								<TextForm
+									showAlert={showAlert}
+									area="Enter Your text"
+									mode={mode}
+								/>
+							}
+						></Route>
+						<Route exact path="about" element={<About />} />
+					</Routes>
+				</div>
+			</BrowserRouter>
 		</>
 	);
 }
